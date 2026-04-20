@@ -17,6 +17,7 @@ namespace Sample0413
                 }
                 i++;
             }
+            Console.WriteLine(i + "回数繰り返しました");
         }
     }
 }
