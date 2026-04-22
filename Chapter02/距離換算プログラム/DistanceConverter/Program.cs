@@ -7,52 +7,56 @@ namespace DistanceConverter
     {
         static void Main(string[] args)
         {
-            if (args.Length >= 1 && args[0] == "-tom")
-            {                                  //メートルへの変換
-                int i = int.Parse(args[1]);
-                int j = int.Parse(args[2]);
-                PrintFeetToMeterList(i, j);
-            }
-            else if(args.Length >= 1 && args[0] == "-tof")
+            if (args.Length == 3 && int.TryParse(args[1], out var start) && (int.TryParse(args[1], out var stop)))
             {
-                int i = int.Parse(args[1]);
-                int j = int.Parse(args[2]);
-                PrintMeterTofeetList(i, j);
+
+                if (args.Length >= 1 && args[0] == "-tom")
+                {                                  //メートルへの変換
+                    PrintFeetToMeterList(int.Parse(args[1]), int.Parse(args[2]));
+                }
+                else if (args.Length >= 1 && args[0] == "-tof")
+                {
+                    PrintMeterTofeetList(int.Parse(args[1]), int.Parse(args[2]));
+                }
+                else
+                {
+                    Console.WriteLine("引数エラー");
+                }
             }
             else
             {
                 Console.WriteLine("引数エラー");
             }
-        }
 
-        static void PrintFeetToMeterList(int start, int stop)
-        {
-            //フィートからメートルへの対応表を出力
-            for (int feet = start; feet <= stop; feet++)
+            static void PrintFeetToMeterList(int start, int stop)
             {
-                double merter = FeetToMerter(feet);
-                Console.WriteLine($"{feet}ft = {merter:0.0000}m");
+                //フィートからメートルへの対応表を出力
+                for (int feet = start; feet <= stop; feet++)
+                {
+                    double merter = FeetToMerter(feet);
+                    Console.WriteLine($"{feet}ft = {merter:0.0000}m");
+                }
             }
-        }
-        static void PrintMeterTofeetList(int start, int stop)
-        {
-            //メートルからフィートへの対応表を出力
-            for (int meter = start; meter <= stop; meter++)
+            static void PrintMeterTofeetList(int start, int stop)
             {
-                double feet = MeterToFeet(meter);
-                Console.WriteLine($"{meter}m = {feet:0.0000}ft");
+                //メートルからフィートへの対応表を出力
+                for (int meter = start; meter <= stop; meter++)
+                {
+                    double feet = MeterToFeet(meter);
+                    Console.WriteLine($"{meter}m = {feet:0.0000}ft");
+                }
             }
-        }
 
-        //フィートからメートルを求める
-        static double FeetToMerter(int feet)
-        {
-            return feet * 0.3048;
-        }
-        //メートルからフィートを求める
-        static double MeterToFeet(int meter)
-        {
-            return meter / 0.3048;
+            //フィートからメートルを求める
+            static double FeetToMerter(int feet)
+            {
+                return feet * 0.3048;
+            }
+            //メートルからフィートを求める
+            static double MeterToFeet(int meter)
+            {
+                return meter / 0.3048;
+            }
         }
     }
 }
