@@ -9,11 +9,15 @@ namespace DistanceConverter
         {
             if (args.Length >= 1 && args[0] == "-tom")
             {                                  //メートルへの変換
-                PrintFeetToMeterList(1, 10);
+                int i = int.Parse(args[1]);
+                int j = int.Parse(args[2]);
+                PrintFeetToMeterList(i, j);
             }
             else if(args.Length >= 1 && args[0] == "-tof")
             {
-                PrintMeterTofeetList(1, 10);
+                int i = int.Parse(args[1]);
+                int j = int.Parse(args[2]);
+                PrintMeterTofeetList(i, j);
             }
             else
             {
