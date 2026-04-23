@@ -9,7 +9,6 @@ namespace DistanceConverter
         {
             if (args.Length == 3 && int.TryParse(args[1], out var start) && (int.TryParse(args[1], out var stop)))
             {
-
                 if (args.Length >= 1 && args[0] == "-tom")
                 {                                  //メートルへの変換
                     PrintFeetToMeterList(int.Parse(args[1]), int.Parse(args[2]));
@@ -30,32 +29,23 @@ namespace DistanceConverter
 
             static void PrintFeetToMeterList(int start, int stop)
             {
+                FeetConverter converter = new FeetConverter();
                 //フィートからメートルへの対応表を出力
                 for (int feet = start; feet <= stop; feet++)
                 {
-                    double merter = FeetToMerter(feet);
+                    double merter = converter.ToMeter(feet);
                     Console.WriteLine($"{feet}ft = {merter:0.0000}m");
                 }
             }
             static void PrintMeterTofeetList(int start, int stop)
             {
+                FeetConverter converter = new FeetConverter();
                 //メートルからフィートへの対応表を出力
                 for (int meter = start; meter <= stop; meter++)
                 {
-                    double feet = MeterToFeet(meter);
+                    double feet = converter.FromMeter(meter);
                     Console.WriteLine($"{meter}m = {feet:0.0000}ft");
                 }
-            }
-
-            //フィートからメートルを求める
-            static double FeetToMerter(int feet)
-            {
-                return feet * 0.3048;
-            }
-            //メートルからフィートを求める
-            static double MeterToFeet(int meter)
-            {
-                return meter / 0.3048;
             }
         }
     }
