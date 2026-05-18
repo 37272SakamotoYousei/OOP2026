@@ -7,7 +7,6 @@ namespace Exercise02 {
         }
         //インチからメートルへの対応表を出力
         private static void PrintInchToMeterList(int start, int end) {
-
             for (int inch = start; inch <= end; inch++) {
                 double merter = InchConverter.ToMeter(inch);
                 Console.WriteLine($"{inch}mm = {merter:0.0000}m");
