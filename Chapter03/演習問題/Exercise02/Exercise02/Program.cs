@@ -32,14 +32,15 @@ namespace Exercise02 {
         }
 
         private static void Exercise2_2(List<string> cities) {
+            var n = cities.Count(s => s.Contains('o'));
+                Console.WriteLine(n);
+        }
+
+        private static void Exercise2_3(List<string> cities) {
             var name = cities.Where(s => s.Contains('o'));
             foreach (var n in name) {
                 Console.WriteLine(n);
             }
-        }
-
-        private static void Exercise2_3(List<string> cities) {
-
         }
 
         private static void Exercise2_4(List<string> cities) {
