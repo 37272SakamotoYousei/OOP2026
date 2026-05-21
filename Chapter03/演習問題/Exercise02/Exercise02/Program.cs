@@ -28,15 +28,11 @@ namespace Exercise02 {
             Console.Write("にゅうりょく:");
             string word = Console.ReadLine();
             var index = cities.FindIndex(s => s == word);
-            if () {
                 Console.WriteLine(index);
-            } else {
-                Console.WriteLine(-1);
-            }
         }
 
         private static void Exercise2_2(List<string> cities) {
-
+           
         }
 
         private static void Exercise2_3(List<string> cities) {
