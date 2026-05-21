@@ -21,23 +21,26 @@ namespace Exercise01 {
         }
 
         private static void Exercise1(List<int> numbers) {
-            var num = numbers.Exists(s => s / 8 == 0 || s / 9 == 0);
-            Console.WriteLine();
+            var num = numbers.Exists(s => s % 8 == 0 || s % 9 == 0);
+            Console.WriteLine(num);
         }
 
         private static void Exercise2(List<int> numbers) {
-            foreach(var num in numbers) {
-                Console.Write(num / 2.0);
-                Console.WriteLine();
-            }
+            numbers.ForEach(s => Console.WriteLine(s / 2.0));
         }
 
         private static void Exercise3(List<int> numbers) {
             var num = numbers.Where(s => s >= 50);
-            Console.WriteLine();
+            foreach (var n in num) {
+                Console.WriteLine(n);
+            }
         }
 
         private static void Exercise4(List<int> numbers) {
+            var num = numbers.Select(s => s * 20);
+            foreach (var i in num) {
+                Console.WriteLine(i);
+            }
         }
     }
 }
