@@ -26,7 +26,7 @@ namespace Exercise02 {
 
         private static void Exercise2_1(List<string> cities) {
             while (true){
-                Console.Write("にゅうりょく:");
+                Console.Write("にゅうりょく(空白で終了):");
                 var name = Console.ReadLine();
                 if (name == string.Empty) {
                     break;
