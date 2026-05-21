@@ -25,10 +25,15 @@ namespace Exercise02 {
         }
 
         private static void Exercise2_1(List<string> cities) {
-            Console.Write("にゅうりょく:");
-            string word = Console.ReadLine();
-            var index = cities.FindIndex(s => s == word);
+            while (true){
+                Console.Write("にゅうりょく:");
+                var name = Console.ReadLine();
+                if (name == string.Empty) {
+                    break;
+                }
+                var index = cities.FindIndex(s => s == name);
                 Console.WriteLine(index);
+            }
         }
 
         private static void Exercise2_2(List<string> cities) {
@@ -47,8 +52,8 @@ namespace Exercise02 {
             var name = cities
                 .Where(s => s.StartsWith('B'))
                 .Select(s => s.Length);
-            foreach (var cnt in name) {
-                Console.WriteLine(cnt);
+            foreach (var n in name) {
+                Console.WriteLine(n);
             }
         }
     }
