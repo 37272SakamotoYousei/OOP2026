@@ -1,4 +1,6 @@
 ﻿
+using System.Security.Cryptography.X509Certificates;
+
 namespace Exercise01 {
     internal class Program {
         static void Main(string[] args) {
@@ -15,10 +17,16 @@ namespace Exercise01 {
         }
 
         private static void Exercise1(List<string> langs) {
+            Console.WriteLine("4-1-1");
             Console.WriteLine("foreach文で出力");
-            var name = langs.Where(s => s.Contains('S'));
+            /*var name = langs.Where(s => s.Contains('S'));
             foreach (var n in name) {
                 Console.WriteLine(n);
+            }*/
+            foreach (var lang in langs) {
+                if (lang.Contains('S')) {
+                    Console.WriteLine(lang);
+                }
             }
 
             Console.WriteLine("\nfor文で出力");
@@ -40,13 +48,21 @@ namespace Exercise01 {
         }
 
         private static void Exercise2(List<string> langs) {
-
+            Console.WriteLine("4-1-2");
+            IEnumerable<string> name = langs.Where(s => s.Contains('S'));
+            foreach (var n in name) {
+                Console.WriteLine(n);
+            }
 
         }
 
         private static void Exercise3(List<string> langs) {
-
-
+            Console.WriteLine("4-1-3");
+            var lang = langs.Find(s => s.Length == 10);
+            if (lang == null) {
+                lang = "unknown";
+            }
+            Console.WriteLine(lang);
         }
     }
 }
