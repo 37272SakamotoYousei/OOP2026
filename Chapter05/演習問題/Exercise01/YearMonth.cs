@@ -19,17 +19,15 @@ namespace Exercise01 {
         public bool IsCentury => 2001 <= Year && Year <= 2100;
         //5.1.3
         public YearMonth AddOneMonth() {
-            if(Month == 12) {
-                var num = new YearMonth( Year + 1,1);
-                    return num;
+            if (Month == 12) {
+                var num = new YearMonth(Year + 1, 1);
+                return num;
             } else {
                 var num = new YearMonth(Year, Month + 1);
                 return num;
             }
         }
         //5.1.4
-        public override string ToString() {
-            return base.ToString();
-        }
+        public override string ToString() => Year + "年" + Month + "月";
     }
 }
