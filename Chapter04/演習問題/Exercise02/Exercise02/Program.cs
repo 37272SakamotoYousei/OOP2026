@@ -68,7 +68,7 @@ namespace Exercise02 {
 
                     _ => num
                 };
-                Console.WriteLine(num);
+                Console.WriteLine(n);
             } else {
                 Console.WriteLine("入力に誤りがあります");
             }
