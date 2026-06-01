@@ -14,5 +14,11 @@ namespace Exercise01 {
             Year = year;
             Month = month;
         }
+        //5.2.2
+        public bool IsCentury => 2001 <= Year && Year <= 2100;
+        //5.2.3
+        /*public YearMonth AddOneMonth() {
+
+        }*/
     }
 }
