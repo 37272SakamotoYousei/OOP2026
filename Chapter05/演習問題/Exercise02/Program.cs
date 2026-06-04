@@ -23,11 +23,12 @@ namespace Exercise02 {
         }
 
         private static void Exercise2(YearMonth[] ymCollection) {
-            
+            foreach ( var number in ymCollection) {
+                Console.WriteLine(number);
+            }
         }
 
         private static void Exercise4(YearMonth[] ymCollection) {
-            
         }
 
         private static void Exercise5(YearMonth[] ymCollection) {
