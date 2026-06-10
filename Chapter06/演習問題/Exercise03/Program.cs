@@ -1,5 +1,6 @@
 ﻿
 using System;
+using System.Runtime.Intrinsics.X86;
 using System.Xml.Linq;
 
 namespace Exercise03 {
@@ -33,7 +34,11 @@ namespace Exercise03 {
         }
 
         private static void Exercise2(string text) {
-            var replaced = text.Replace("big", "small");
+            Console.Write("検索:");
+            var search = Console.ReadLine();
+            Console.Write("置換:");
+            var Replacement = Console.ReadLine();
+            var replaced = text.Replace(search, Replacement);
             Console.WriteLine(replaced);
         }
 
@@ -42,7 +47,6 @@ namespace Exercise03 {
         }
 
         private static void Exercise4(string text) {
-            
         }
 
         private static void Exercise5(string text) {
