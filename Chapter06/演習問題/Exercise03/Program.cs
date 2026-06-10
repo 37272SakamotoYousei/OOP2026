@@ -43,18 +43,23 @@ namespace Exercise03 {
         }
 
         private static void Exercise3(string text) {
-            
+
         }
 
         private static void Exercise4(string text) {
+            var word = text.Split(' ').Count();
+            Console.WriteLine("単語数:" + word);
         }
 
         private static void Exercise5(string text) {
-            
+            var word = text.Split(' ').Where(s => s.Length <= 4);
+            foreach (var str in word) {
+                Console.WriteLine(str);
+            }
         }
 
         private static void Exercise6(string text) {
-            
+
         }
     }
 }
