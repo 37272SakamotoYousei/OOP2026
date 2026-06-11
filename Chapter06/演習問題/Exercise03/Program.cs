@@ -60,22 +60,31 @@ namespace Exercise03 {
         }
 
         private static void Exercise6(string text) {
-            var str = text.ToLower().Replace(" ","");
+            var str = text.ToLower().Replace(" ", "");
+
             //辞書(ディクショナリ)を使った集計
             var alphDicCount = Enumerable.Range('a', 26).
-                ToDictionary(num => ((char)num).ToString(),num => 0);
+                ToDictionary(num => ((char)num), num => 0);
 
-            var dict = new SortedDictionary<char, int>();
-            foreach(var c in str) {
-                if (dict.ContainsKey(c))
-                    dict[c]++;
-                else
-                    dict[c] = 1;
+            //var dict = new SortedDictionary<char, int>();
+            foreach (var c in str) {
+                    alphDicCount[c]++;
             }
-            foreach(var word in dict) {
+            foreach (var word in alphDicCount) {
                 Console.WriteLine(word.Key + ":" + word.Value);
             }
 
+            //配列を用いた集計
+            var array = Enumerable.Repeat(0, 26).ToArray();
+            foreach (var alph in str) {
+                array[alph - 'a']++;
+            }
+            for (char ch = 'a'; ch <= 'z'; ch++) {
+                Console.WriteLine($"{ ch}:{array[ch - 'a']}");
+            }
+            foreach(var num in array) {
+                Console.WriteLine(num);
+            }
 
             //var dict = new Dictionary<char, int>();
             //foreach (var str in text) {
