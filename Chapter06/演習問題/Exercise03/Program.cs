@@ -68,7 +68,7 @@ namespace Exercise03 {
 
             //var dict = new SortedDictionary<char, int>();
             foreach (var c in str) {
-                    alphDicCount[c]++;
+                alphDicCount[c]++;
             }
             foreach (var word in alphDicCount) {
                 Console.WriteLine(word.Key + ":" + word.Value);
@@ -80,24 +80,28 @@ namespace Exercise03 {
                 array[alph - 'a']++;
             }
             for (char ch = 'a'; ch <= 'z'; ch++) {
-                Console.WriteLine($"{ ch}:{array[ch - 'a']}");
+                Console.WriteLine($"{ch}:{array[ch - 'a']}");
             }
-            foreach(var num in array) {
+            foreach (var num in array) {
                 Console.WriteLine(num);
             }
 
-            //var dict = new Dictionary<char, int>();
-            //foreach (var str in text) {
-            //    if (dict.ContainsKey(str)) {
+            //'a'から順にカウントして集計
+            for (char ch = 'a'; ch <= 'z'; ch++) {
+                Console.WriteLine($"{ch}:{str.Count(c => c == ch)}");
+            }
+                //var dict = new Dictionary<char, int>();
+                //foreach (var str in text) {
+                //    if (dict.ContainsKey(str)) {
 
-            //        dict[str] += 1;
-            //    } else {
-            //        dict[str] = 1;
-            //    }
-            //}
-            //foreach(KeyValuePair<char, int> obj in dict) {
-            //    Console.WriteLine($"{obj.Key} : {obj.Value}");
-            //}
-        }
+                //        dict[str] += 1;
+                //    } else {
+                //        dict[str] = 1;
+                //    }
+                //}
+                //foreach(KeyValuePair<char, int> obj in dict) {
+                //    Console.WriteLine($"{obj.Key} : {obj.Value}");
+                //}
+            }
     }
 }
