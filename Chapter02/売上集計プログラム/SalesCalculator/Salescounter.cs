@@ -46,6 +46,5 @@ namespace SalesCalculator {
             }
             return dict;
         }
-
     }
 }

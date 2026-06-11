@@ -23,7 +23,7 @@ namespace Exercise03 {
             Console.WriteLine("6.3.5");
             Exercise5(text);
 
-            Console.WriteLine("6.3.99");
+            Console.WriteLine("6.3.6");
             Exercise6(text);
             #endregion
         }
@@ -52,14 +52,43 @@ namespace Exercise03 {
         }
 
         private static void Exercise5(string text) {
-            var word = text.Split(' ').Where(s => s.Length <= 4);
+            var word = text.Split(' ').Where(s => s.Length <= 4).ToList();
+            //リストにする場合ToList(); 配列にする場合ToArray();
             foreach (var str in word) {
                 Console.WriteLine(str);
             }
         }
 
         private static void Exercise6(string text) {
+            var str = text.ToLower().Replace(" ","");
+            //辞書(ディクショナリ)を使った集計
+            var alphDicCount = Enumerable.Range('a', 26).
+                ToDictionary(num => ((char)num).ToString(),num => 0);
 
+            var dict = new SortedDictionary<char, int>();
+            foreach(var c in str) {
+                if (dict.ContainsKey(c))
+                    dict[c]++;
+                else
+                    dict[c] = 1;
+            }
+            foreach(var word in dict) {
+                Console.WriteLine(word.Key + ":" + word.Value);
+            }
+
+
+            //var dict = new Dictionary<char, int>();
+            //foreach (var str in text) {
+            //    if (dict.ContainsKey(str)) {
+
+            //        dict[str] += 1;
+            //    } else {
+            //        dict[str] = 1;
+            //    }
+            //}
+            //foreach(KeyValuePair<char, int> obj in dict) {
+            //    Console.WriteLine($"{obj.Key} : {obj.Value}");
+            //}
         }
     }
 }
