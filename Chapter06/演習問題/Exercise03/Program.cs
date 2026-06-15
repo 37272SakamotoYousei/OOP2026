@@ -1,6 +1,7 @@
 ﻿
 using System;
 using System.Runtime.Intrinsics.X86;
+using System.Text;
 using System.Xml.Linq;
 
 namespace Exercise03 {
@@ -43,7 +44,12 @@ namespace Exercise03 {
         }
 
         private static void Exercise3(string text) {
-
+            var words = text.Split(' ').ToList();
+            var sb = new StringBuilder();
+            foreach(var word in text) {
+                sb.Append(word);
+            }
+            Console.WriteLine(sb + ".");
         }
 
         private static void Exercise4(string text) {
@@ -103,5 +109,6 @@ namespace Exercise03 {
                 //    Console.WriteLine($"{obj.Key} : {obj.Value}");
                 //}
             }
+
     }
 }
