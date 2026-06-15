@@ -44,12 +44,25 @@ namespace Exercise03 {
         }
 
         private static void Exercise3(string text) {
-            var words = text.Split(' ').ToList();
-            var sb = new StringBuilder();
-            foreach(var word in text) {
+            var words = text.Split(' ');
+            var sb = new StringBuilder(words[0]);
+
+            foreach(var word in words.Skip(1)) {
+                sb.Append(' ');
                 sb.Append(word);
             }
             Console.WriteLine(sb + ".");
+            //sb.Append(words[0]);
+            //for(int i = 1; i < words.Length; i++) {
+            //    sb.Append(' ');
+            //    sb.Append(words[i]);
+            //}
+
+
+            //foreach (var word in words) {
+            //    sb.Append(word);
+            //}
+            //Console.WriteLine(sb);
         }
 
         private static void Exercise4(string text) {
