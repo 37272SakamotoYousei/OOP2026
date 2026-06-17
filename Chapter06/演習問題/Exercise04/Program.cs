@@ -5,16 +5,16 @@ namespace Exercise04 {
     internal class Program {
         static void Main(string[] args) {
             var line = "Novelist=谷崎潤一郎;BestWork=春琴抄;Born=1886";
-            var words = line.Split(';','=');
-
-            for (int i = 0; i < words.Length; i++) {
-                Console.WriteLine($"{ToJapanese(words[i])} : {words[i+1]}");
-                i++;
-            }
-            //foreach(var word in words) {
-            //    ToJapanese(word);
+            //var words = line.Split(';', '=');
+            //for (int i = 0; i < words.Length; i++) {
+            //    Console.WriteLine($"{ToJapanese(words[i])} : {words[i + 1]}");
+            //    i++;
             //}
-            //Console.WriteLine();
+
+            foreach (var name in line.Split(';')) {
+                var word = name.Split('=');
+                Console.WriteLine($"{ToJapanese(word[0])}:{word[1]}");
+            }
 
         }
         static string ToJapanese(string key) {
