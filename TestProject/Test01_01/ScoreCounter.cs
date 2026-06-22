@@ -28,13 +28,13 @@ namespace Test01_01 {
         //メソッドの概要：
         public IDictionary<string, int> GetPerStudentScore() {
             var dict = new Dictionary<string, int>();
-            foreach (var SCORE in _score) {
-                if (dict.ContainsKey(SCORE.Subject))
+            foreach (var Score in _score) {
+                if (dict.ContainsKey(Score.Subject))
 
-                    dict[SCORE.Subject] += SCORE.Score;
+                    dict[Score.Subject] += Score.Score;
                 else
 
-                    dict[SCORE.Subject] = SCORE.Score;
+                    dict[Score.Subject] = Score.Score;
             }
             return dict;
         }
