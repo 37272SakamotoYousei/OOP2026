@@ -1,0 +1,81 @@
+﻿using Section01;    //Section01プロジェクトにあるBookクラスを利用
+
+namespace Exercise02 {
+    internal class Program {
+        static void Main(string[] args) {
+            var books = new List<Book> {
+                new Book { Title = "C#プログラミングの新常識", Price = 3800, Pages = 378 },
+                new Book { Title = "ラムダ式とLINQの極意", Price = 2500, Pages = 312 },
+                new Book { Title = "ワンダフル・C#ライフ", Price = 2900, Pages = 385 },
+                new Book { Title = "一人で学ぶ並列処理プログラミング", Price = 4800, Pages = 464 },
+                new Book { Title = "フレーズで覚えるC#入門", Price = 5300, Pages = 604 },
+                new Book { Title = "私でも分かったASP.NET Core", Price = 3200, Pages = 453 },
+                new Book { Title = "楽しいC#プログラミング教室", Price = 2540, Pages = 348 },
+            };
+            #region
+            Console.WriteLine("\n7.2.1");
+            Exercise1(books);
+
+            Console.WriteLine("\n7.2.2");
+            Exercise2(books);
+
+            Console.WriteLine("\n7.2.3");
+            Exercise3(books);
+
+            Console.WriteLine("\n7.2.4");
+            Exercise4(books);
+
+            Console.WriteLine("\n7.2.5");
+            Exercise5(books);
+
+            Console.WriteLine("\n7.2.6");
+            Exercise6(books);
+
+            Console.WriteLine("\n7.2.7");
+            Exercise7(books);
+            #endregion
+        }
+
+        private static void Exercise1(List<Book> books) {
+            var book = books.Where(n => n.Title.Contains("ワンダフル・C#ライフ"));
+            foreach (var b in book) {
+                Console.WriteLine($"価格:{b.Price}円,書籍:{b.Pages}ページ");
+            }
+        }
+
+        private static void Exercise2(List<Book> books) {
+            var book = books.Count(s => s.Title.Contains("C#"));
+            Console.WriteLine(book + "冊");
+        }
+
+        private static void Exercise3(List<Book> books) {
+            var pageAverage = books.Where(s=> s.Title.Contains("C#")).Average(x => x.Pages);
+            Console.WriteLine(pageAverage);
+        }
+
+        private static void Exercise4(List<Book> books) {
+            var price = books.Where(x => x.Price >= 4000).Take(1);
+            foreach (var book in price) {
+                Console.WriteLine(book.Title);
+            }
+        }
+
+        private static void Exercise5(List<Book> books) {
+            var page = books
+                .Where(x => x.Price < 4000)
+                .Max(x => x.Pages);
+            Console.WriteLine(page);
+        }
+
+        private static void Exercise6(List<Book> books) {
+            var page = books.OrderByDescending(x => x.Price).Where(x => x.Pages >= 400);
+            foreach (var p in page) {
+                Console.WriteLine($"{p.Title}:{p.Price}");
+            }
+        }
+
+        private static void Exercise7(List<Book> books) {
+
+        }
+    }
+}

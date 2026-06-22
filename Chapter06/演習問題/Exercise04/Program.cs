@@ -15,7 +15,6 @@ namespace Exercise04 {
                 var word = name.Split('=');
                 Console.WriteLine($"{ToJapanese(word[0])}:{word[1]}");
             }
-
         }
         static string ToJapanese(string key) {
             return key switch {
