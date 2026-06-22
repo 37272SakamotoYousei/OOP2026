@@ -19,7 +19,7 @@ namespace Section01 {
             }
             Console.WriteLine();
             //250ページ以上の本を上位3冊出力
-            Console.WriteLine("---250ページ以上の本を上位3冊出力---");
+            Console.WriteLine("-----250ページ以上の本を上位3冊出力-----");
             var page = books.Where(x => x.Pages >= 250).Take(3);
             foreach(var book in page) {
                 Console.WriteLine(book.Title);
