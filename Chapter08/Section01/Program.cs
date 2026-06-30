@@ -16,28 +16,33 @@ namespace Section01 {
 
                 if (pref == null) break;
 
-                //②県庁所在地登録処理
+                //②県庁所在地の入力
                 Console.Write("県庁所在地:");
                 prefCaptalLocation = Console.ReadLine();
                 Console.WriteLine();
 
                 //③県庁所在地登録処理
-                prefOfficeDict.Add(pref, prefCaptalLocation);
+                var maki = pref;
+                if (prefOfficeDict.ContainsKey(maki)) {
+                    Console.Write("上書きしますか？(Y/N)");
+                    if (Console.ReadLine() is "N") continue;
+                }
+                prefOfficeDict[pref] = prefCaptalLocation;
             }
 
             while (true) {
-                Console.WriteLine("****めにゅー****");
+                Console.WriteLine("****めにゅ～****");
                 Console.WriteLine("1:一覧表示");
                 Console.WriteLine("2:検索");
                 Console.WriteLine("3:終了");
                 Console.Write(">");
 
-                var aou = Console.ReadLine();
-                if (aou == "3") {
+                var menu = Console.ReadLine();
+                if (menu is "3") {
                     break;
                 }
 
-                switch (aou) {
+                switch (menu) {
                     case "1":
                         foreach (var item in prefOfficeDict) {
                             Console.WriteLine($"{item.Key}の県庁所在地は{item.Value}です");
