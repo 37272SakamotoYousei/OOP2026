@@ -25,8 +25,18 @@ namespace Exercise01 {
         }
 
         private static void Exercise2(string text) {
-            //var word = new SortedDictionary<TKey, TValue>();
-            
+            var word = new SortedDictionary<char, int>();
+            foreach (var item in text.ToUpper()) {
+                if ('A' <= item && item <= 'Z') {
+                    if (word.ContainsKey(item))
+                        word[item]++;
+                    else
+                        word[item] = 1;
+                }
+            }
+            foreach (var alph in word) {
+                Console.WriteLine($"{alph.Key}:{alph.Value}");
+            }
         }
     }
 }
