@@ -16,7 +16,8 @@ namespace Exercise02 {
             Console.WriteLine();    //改行
 
             // 8.2.3 (Removeの呼び出し例)
-            abbrs.Remove(Console.ReadLine());
+            abbrs.Remove("NPT");
+            //abbrs.Remove(Console.ReadLine());
             Console.WriteLine(abbrs.Count);
 
 
