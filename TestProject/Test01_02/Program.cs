@@ -83,9 +83,9 @@ namespace Test01_02 {
         //問題４　10以上50以下の数字のみを表示（即時実行でも可とする）
         //　　　　出力結果【12 14 20 40 35 31 17 48】
         private static void Exercise04(int[] numbers) {
-            var num = numbers.Where(x => x >= 10 && x >= 50);
+            var num = numbers.Where(x => x >= 10 && x <= 50);
             foreach(var number in num)
-            Console.Write(number);
+            Console.Write(number + " ");
         }
 
         //問題５　Countメソッドを使い、小文字の'n'が含まれている都市名がいくつあるかカウントして結果を表示
