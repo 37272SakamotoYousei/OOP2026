@@ -36,8 +36,17 @@ namespace Section01 {
                 age--;
             }
 
-            tbOut.Text = $"あなたは{age}歳です";
+            tbOut.Text = $"あなたは{GetAge(birth,today)}歳です";
             tbOut2.Text = $"経過日数{diff.Days}日";
+        }
+
+        //年齢を求めるメソッド
+        static int GetAge(DateTime birthday, DateTime targetDay) {
+            var age = targetDay.Year - birthday.Year;
+            if (targetDay < birthday.AddYears(age)) {
+                age--;
+            }
+            return age;
         }
     }
 }
