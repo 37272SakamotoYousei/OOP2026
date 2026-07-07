@@ -33,6 +33,8 @@
             tbOut2 = new TextBox();
             label2 = new Label();
             label3 = new Label();
+            tbOut3 = new TextBox();
+            label4 = new Label();
             ((System.ComponentModel.ISupportInitialize)nudDay).BeginInit();
             SuspendLayout();
             // 
@@ -139,11 +141,32 @@
             label3.TabIndex = 9;
             label3.Text = "経過日数";
             // 
+            // tbOut3
+            // 
+            tbOut3.Font = new Font("Yu Gothic UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 128);
+            tbOut3.Location = new Point(194, 273);
+            tbOut3.Multiline = true;
+            tbOut3.Name = "tbOut3";
+            tbOut3.Size = new Size(611, 86);
+            tbOut3.TabIndex = 10;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Yu Gothic UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 128);
+            label4.Location = new Point(158, 279);
+            label4.Name = "label4";
+            label4.Size = new Size(27, 17);
+            label4.TabIndex = 11;
+            label4.Text = "メモ";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(2321, 1374);
+            ClientSize = new Size(836, 438);
+            Controls.Add(label4);
+            Controls.Add(tbOut3);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(tbOut2);
@@ -158,6 +181,7 @@
             Margin = new Padding(6);
             Name = "Form1";
             Text = "Form1";
+            Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)nudDay).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -175,5 +199,7 @@
         private TextBox tbOut2;
         private Label label2;
         private Label label3;
+        private TextBox tbOut3;
+        private Label label4;
     }
 }
