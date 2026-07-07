@@ -30,13 +30,13 @@ namespace Section01 {
 
             TimeSpan diff = today - birth;
 
-            //int age = today.Year - birth.Year;
+            int age = today.Year - birth.Year;
 
-            //if(today < birth.AddYears(age)) {
-            //    age--;
-            //}
+            if (today < birth.AddYears(age)) {
+                age--;
+            }
 
-            tbOut.Text = $"‚ ‚È‚½‚Í{diff.Days/365}Î‚Å‚·";
+            tbOut.Text = $"‚ ‚È‚½‚Í{age}Î‚Å‚·";
             tbOut2.Text = $"Œo‰ß“ú”{diff.Days}“ú";
         }
     }
