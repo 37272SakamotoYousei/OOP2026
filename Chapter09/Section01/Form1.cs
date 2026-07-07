@@ -1,3 +1,5 @@
+using System.Globalization;
+
 namespace Section01 {
     public partial class Form1 : Form {
         public Form1() {
@@ -5,40 +7,37 @@ namespace Section01 {
         }
 
         private void btGet_Click(object sender, EventArgs e) {
-            DateTime dt1 = dtpDate.Value;
+            DateTime date = dtpDate.Value;
 
-            if (DateTime.IsLeapYear(dt1.Year)) {
-                tbOut.Text = "‚¤‚é‚¤”N‚Å‚·";
-            } else {
-                tbOut.Text = "‚¤‚é‚¤”N‚Å‚Í‚ ‚è‚Ü‚¹‚ñ";
-            }
-            switch (dt1.DayOfWeek) {
-                case DayOfWeek.Saturday:
-                    tbOut.Text = "¡“ú‚Í“y—j“ú‚Å‚·";
-                    break;
-                case DayOfWeek.Sunday:
-                    tbOut.Text = "¡“ú‚Í“ú—j“ú‚Å‚·";
-                    break;
-                case DayOfWeek.Monday:
-                    tbOut.Text = "¡“ú‚ÍŒ—j“ú‚Å‚·";
-                    break;
-                case DayOfWeek.Tuesday:
-                    tbOut.Text = "¡“ú‚Í‰Î—j“ú‚Å‚·";
-                    break;
-                case DayOfWeek.Wednesday:
-                    tbOut.Text = "¡“ú‚Í…—j“ú‚Å‚·";
-                    break;
-                case DayOfWeek.Thursday:
-                    tbOut.Text = "¡“ú‚Í–Ø—j“ú‚Å‚·";
-                    break;
-                case DayOfWeek.Friday:
-                    tbOut.Text = "¡“ú‚Í‹à—j“ú‚Å‚·";
-                    break;
-            }
+            tbOut.Text = date.AddDays((double)nudDay.Value).ToString();
         }
 
         private void dtpDate_ValueChanged(object sender, EventArgs e) {
 
+        }
+
+        private void nudDay_ValueChanged(object sender, EventArgs e) {
+
+        }
+
+        private void tbOut_TextChanged(object sender, EventArgs e) {
+
+        }
+
+        private void btBithCalc_Click(object sender, EventArgs e) {
+            DateTime birth = dtpBirth.Value; //¶‚Ü‚ê‚½“ú•t
+            DateTime today = DateTime.Today; //¡“ú‚Ì“ú•t
+
+            TimeSpan diff = today - birth;
+
+            //int age = today.Year - birth.Year;
+
+            //if(today < birth.AddYears(age)) {
+            //    age--;
+            //}
+
+            tbOut.Text = $"‚ ‚È‚½‚Í{diff.Days/365}Î‚Å‚·";
+            tbOut2.Text = $"Œo‰ß“ú”{diff.Days}“ú";
         }
     }
 }
