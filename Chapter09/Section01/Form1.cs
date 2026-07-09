@@ -47,10 +47,24 @@ namespace Section01 {
             tbOut2.Text = $"経過日数{diff.Days}日";
             tbOut3.Text = $"生まれた{birth.Month}月{birth.Day}日は" +
                           $"第{NthWeek(birth)}週の{dayOfWeek}です";
+            tbOut4.Text = Birthday(today, birth);
         }
 
-        //年齢を求めるメソッド
-        static int GetAge(DateTime birthday, DateTime targetDay) {
+        static string Birthday(DateTime today, DateTime birth) {
+            DateTime DAY = new DateTime(today.Year, birth.Month, birth.Day);
+            if (DAY == today.Date) {
+                    return $"誕生日は今日です";
+            }
+            if(DAY < today) {
+                DAY = DAY.AddYears(1);
+            }
+            var BIRTH = DAY - today;
+            return $"誕生日まであと{BIRTH.Days}日です";
+        }
+
+
+            //年齢を求めるメソッド
+            static int GetAge(DateTime birthday, DateTime targetDay) {
             var age = targetDay.Year - birthday.Year;
             if (targetDay < birthday.AddYears(age)) {
                 age--;
