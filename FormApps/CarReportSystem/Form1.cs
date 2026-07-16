@@ -75,5 +75,10 @@ namespace CarReportSystem {
             tbReport.Text = (string)dgvRecords.CurrentRow.Cells["Report"].Value;
             pbPicture.Image = (Image)dgvRecords.CurrentRow.Cells["Picture"].Value;
         }
+
+        private void SetRadioButtonMaker(object sender, EventArgs e) {
+
+
+        }
     }
 }
