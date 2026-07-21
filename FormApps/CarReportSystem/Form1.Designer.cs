@@ -291,6 +291,7 @@
             btDeletePicture.TabIndex = 16;
             btDeletePicture.Text = "削除";
             btDeletePicture.UseVisualStyleBackColor = false;
+            btDeletePicture.Click += btDeletePicture_Click;
             // 
             // pbPicture
             // 
@@ -338,6 +339,7 @@
             btDeleteRecod.TabIndex = 20;
             btDeleteRecod.Text = "削除";
             btDeleteRecod.UseVisualStyleBackColor = false;
+            btDeleteRecod.Click += btDeleteRecod_Click;
             // 
             // menuStrip1
             // 
@@ -427,6 +429,7 @@
             statusStrip1.Location = new Point(0, 582);
             statusStrip1.Name = "statusStrip1";
             statusStrip1.Size = new Size(785, 22);
+            statusStrip1.SizingGrip = false;
             statusStrip1.TabIndex = 24;
             statusStrip1.Text = "statusStrip1";
             // 
@@ -467,7 +470,9 @@
             Controls.Add(dtpDate);
             Controls.Add(label1);
             Controls.Add(menuStrip1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "Form1";
+            SizeGripStyle = SizeGripStyle.Show;
             Text = "試乗レポート管理システム";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();

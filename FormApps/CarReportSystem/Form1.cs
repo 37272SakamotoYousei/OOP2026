@@ -108,14 +108,22 @@ namespace CarReportSystem {
 
         //記録者の入力履歴をコンボボックスへ登録(重複なし)
         private void SetCbAuthor(string author) {
-            if(!cbAuthor.Items.Contains(author))
-            cbAuthor.Items.Add(author);
+            if (!cbAuthor.Items.Contains(author))
+                cbAuthor.Items.Add(author);
         }
 
         //車名の入力履歴をコンボボックスへ登録(重複なし)
         private void SetCbCarName(string carName) {
             if (!cbCarName.Items.Contains(carName))
                 cbCarName.Items.Add(carName);
+        }
+
+        private void btDeletePicture_Click(object sender, EventArgs e) {
+            pbPicture.Image = null;
+        }
+
+        private void btDeleteRecod_Click(object sender, EventArgs e) {
+            listCarReports.RemoveAt(dgvRecords.CurrentRow.Index);
         }
     }
 }
