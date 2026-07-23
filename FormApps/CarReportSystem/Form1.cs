@@ -1,5 +1,6 @@
 using System.ComponentModel;
 using System.Drawing.Text;
+using System.Windows.Forms;
 using static CarReportSystem.CarReport;
 
 namespace CarReportSystem {
@@ -174,7 +175,7 @@ namespace CarReportSystem {
         }
         private void dgvRecords_Click(object sender, EventArgs e) {
 
-            if ((dgvRecords.CurrentRow is null)||(!dgvRecords.CurrentRow.Selected))
+            if ((dgvRecords.CurrentRow is null) || (!dgvRecords.CurrentRow.Selected))
                 return;
 
             dtpDate.Value = (DateTime)dgvRecords.CurrentRow.Cells["Date"].Value;
@@ -185,6 +186,19 @@ namespace CarReportSystem {
             pbPicture.Image = (Image)dgvRecords.CurrentRow.Cells["Picture"].Value;
 
             ImputItemsUpdate();
+        }
+
+        private void èIóπToolStripMenuItem_Click(object sender, EventArgs e) {
+            Application.Exit();
+        }
+
+        private void êFê›íËToolStripMenuItem_Click(object sender, EventArgs e) {
+            ColorDialog cdColor = new ColorDialog();
+            cdColor.Color = Form1.DefaultBackColor;
+            cdColor.CustomColors = new int[] { 0x00FF0000, 0x0000FF00, 0x000000FF };
+            if (cdColor.ShowDialog() == DialogResult.OK) {
+                this.BackColor = cdColor.Color;
+            }
         }
     }
 }
