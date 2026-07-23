@@ -481,6 +481,7 @@
             Name = "Form1";
             SizeGripStyle = SizeGripStyle.Show;
             Text = "試乗レポート管理システム";
+            FormClosed += Form1_FormClosed;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvRecords).EndInit();
