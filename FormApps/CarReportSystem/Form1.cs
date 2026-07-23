@@ -165,6 +165,7 @@ namespace CarReportSystem {
             listCarReports[dgvRecords.CurrentRow.Index].Picture = pbPicture.Image;
 
             dgvRecords.Refresh(); //データグリッドビューの更新
+
         }
 
         public void ImputItemsUpdate() {
