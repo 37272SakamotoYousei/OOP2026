@@ -1,6 +1,7 @@
 using System.ComponentModel;
 using System.Diagnostics.Eventing.Reader;
 using System.Drawing.Text;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Windows.Forms;
 using System.Xml;
 using System.Xml.Serialization;
@@ -24,15 +25,16 @@ namespace CarReportSystem {
             //P286以降を参考にする(ファイル名:setting.xml)
 
             //ファイルが存在するか？
-            if(File.Exists("setting.xml")) {
+            if (File.Exists("setting.xml")) {
                 try {
-                    using(var reader = XmlReader.Create("setting.xml")) {
+                    using (var reader = XmlReader.Create("setting.xml")) {
                         var serializer = new XmlSerializer(typeof(Settings));
-                        var settings = serializer.Deserialize(reader) as Settings;
+                        settings = serializer.Deserialize(reader) as Settings;
+                        //背景色設定
                         BackColor = Color.FromArgb(settings.MaiinFormBackColor);
                     }
                 }
-                catch(Exception ex) {
+                catch (Exception ex) {
                     tsslbMessage.Text = "設定ファイル読み込みエラー";
                     MessageBox.Show(ex.Message);//←より具体的なエラーを出力
                 }
@@ -165,7 +167,7 @@ namespace CarReportSystem {
             }
 
             listCarReports[dgvRecords.CurrentRow.Index].Date = dtpDate.Value.Date;
-            listCarReports[dgvRecords.CurrentRow.Index].Author = dtpDate.Text.Trim();
+            listCarReports[dgvRecords.CurrentRow.Index].Author = cbAuthor.Text.Trim();
             listCarReports[dgvRecords.CurrentRow.Index].Maker = getRadioButtonMaker();
             listCarReports[dgvRecords.CurrentRow.Index].CarName = cbCarName.Text.Trim();
             listCarReports[dgvRecords.CurrentRow.Index].Report = tbReport.Text;
@@ -222,10 +224,43 @@ namespace CarReportSystem {
         //フォームが閉じたら呼ばれるイベントハンドラ
         private void Form1_FormClosed(object sender, FormClosedEventArgs e) {
             //設定ファイルへ色情報を保存する処理(シリアル化)
-            using(var writer = XmlWriter.Create("setting.xml")) {
+            using (var writer = XmlWriter.Create("setting.xml")) {
                 var serializer = new XmlSerializer(settings.GetType());
                 serializer.Serialize(writer, settings);
             }
+
+        }
+
+        private void 保存ToolStripMenuItem_Click(object sender, EventArgs e) {
+            reportsavefile();
+        }
+
+        //ファイルセーブ処理
+        private void reportsavefile() {
+            if(sfdReportFileSave.ShowDialog() == DialogResult.OK) {
+                try {
+                    //バイナリ形式でシリアル化
+#pragma warning disable SYSLIB0011
+                    var bf = new BinaryFormatter();
+#pragma warning restore SYSLIB0011
+
+                }
+                catch (Exception ex) {
+                    tsslbMessage.Text = "ファイル書き出しエラー";
+                    MessageBox.Show(ex.Message);
+                }
+
+
+
+            }
+
+
+        }
+
+        //ファイルリード処理
+        private void reportOpenFile() {
+
+
 
         }
     }
