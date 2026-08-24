@@ -41,7 +41,6 @@ namespace CarReportSystem {
             } else {
                 tsslbMessage.Text = "設定ファイルがありません";
             }
-
         }
 
         //追加ボタンイベントハンドラ
@@ -152,7 +151,6 @@ namespace CarReportSystem {
             //削除したいインデックスを指定してリストから削除
             listCarReports.RemoveAt(dgvRecords.CurrentRow.Index);
             ImputItemsUpdate();
-
         }
 
         private void btModifyRecord_Click(object sender, EventArgs e) {
@@ -178,7 +176,6 @@ namespace CarReportSystem {
 
             dgvRecords.Refresh(); //データグリッドビューの更新
             tsslbMessage.Text = "レポートを修正しました";
-
         }
 
         public void ImputItemsUpdate() {
@@ -218,7 +215,6 @@ namespace CarReportSystem {
                 //変更された色の情報を保存
                 settings.MaiinFormBackColor = cdColor.Color.ToArgb();
             }
-
         }
 
         //フォームが閉じたら呼ばれるイベントハンドラ
@@ -228,40 +224,73 @@ namespace CarReportSystem {
                 var serializer = new XmlSerializer(settings.GetType());
                 serializer.Serialize(writer, settings);
             }
-
         }
 
         private void 保存ToolStripMenuItem_Click(object sender, EventArgs e) {
             reportsavefile();
         }
 
+        private void 開くToolStripMenuItem_Click(object sender, EventArgs e) {
+            reportOpenFile();
+        }
+
         //ファイルセーブ処理
         private void reportsavefile() {
-            if(sfdReportFileSave.ShowDialog() == DialogResult.OK) {
+            if (sfdReportFileSave.ShowDialog() == DialogResult.OK) {
                 try {
                     //バイナリ形式でシリアル化
 #pragma warning disable SYSLIB0011
                     var bf = new BinaryFormatter();
 #pragma warning restore SYSLIB0011
-
+                    using (FileStream fs = File.Open(
+                        sfdReportFileSave.FileName,
+                        FileMode.Create
+                        )) {
+                        bf.Serialize(fs, listCarReports);
+                    }
                 }
                 catch (Exception ex) {
                     tsslbMessage.Text = "ファイル書き出しエラー";
                     MessageBox.Show(ex.Message);
                 }
-
-
-
             }
-
-
         }
 
         //ファイルリード処理
         private void reportOpenFile() {
+            if (ofdReportFileOpen.ShowDialog() == DialogResult.OK) {
+                try {
+                    //逆シリアル化でバイナリ形式を取り込む
+#pragma warning disable SYSLIB0011
+                    var bf = new BinaryFormatter();
+#pragma warning restore SYSLIB0011
 
+                    using (FileStream fs = File.Open(
+                        ofdReportFileOpen.FileName, //ファイル名
+                        FileMode.Open,　//ファイルモード
+                        FileAccess.Read //アクセス
+                        )) {
 
+                        listCarReports = (BindingList<CarReport>)bf.Deserialize(fs);
+                        dgvRecords.DataSource = listCarReports;
+                    }
+                    //コンボボックスの履歴をすべて消す
 
+                    cbAuthor.Items.Clear();
+                    cbCarName.Items.Clear();
+
+                    //コンボボックスの履歴を再登録
+
+                    foreach (var report in listCarReports) {
+                        SetCbAuthor(report.Author);
+                        SetCbCarName(report.CarName);
+                    }
+                }
+                catch (Exception ex) {
+                    tsslbMessage.Text = "ファイル読み出しエラー";
+                    MessageBox.Show(ex.Message);
+                }
+            }
         }
     }
 }
