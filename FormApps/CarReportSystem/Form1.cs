@@ -150,7 +150,11 @@ namespace CarReportSystem {
             if ((dgvRecords.CurrentRow is null) || (!dgvRecords.CurrentRow.Selected)) return;
 
             //削除したいインデックスを指定してリストから削除
-            listCarReports.RemoveAt(dgvRecords.CurrentRow.Index);
+            if (dgvRecords.CurrentRow?.DataBoundItem is not CarReport carReport) {
+                tsslbMessage.Text = "削除するレポートを選択してください";
+                return;
+            }
+            listCarReports.Remove(carReport);
             ImputItemsUpdate();
         }
 
@@ -164,7 +168,11 @@ namespace CarReportSystem {
                 tsslbMessage.Text = "記録者、または車名が未入力です";
                 return;
             }
-
+            if (dgvRecords.CurrentRow?.DataBoundItem is not CarReport carReport) {
+                tsslbMessage.Text = "修正するレポートを選択してください";
+                return;
+            }
+            //カーレポート管理用リストの該当する要素のデータを書き換える
             listCarReports[dgvRecords.CurrentRow.Index].Date = dtpDate.Value.Date;
             listCarReports[dgvRecords.CurrentRow.Index].Author = cbAuthor.Text.Trim();
             listCarReports[dgvRecords.CurrentRow.Index].Maker = getRadioButtonMaker();
