@@ -6,16 +6,16 @@ namespace CarReportSystem {
     public partial class Form1 : Form {
 
         //カーレポート管理用リスト
-        BindingList<CarReport> listCarReports = new BindingList<CarReport>();
+        private readonly BindingList<CarReport> _carreports = new();
 
-        CarreportRepository repository = new CarreportRepository();
+        private readonly CarreportRepository _repository = new();
 
         //設定クラスのオブジェクトを生成
         //Settings settings = Settings.Instance;
 
         public Form1() {
             InitializeComponent();
-            dgvRecords.DataSource = listCarReports;
+            dgvRecords.DataSource = _carreports;
         }
         private void Form1_Load(object sender, EventArgs e) {
             //設定ファイルを読み込み背景色を設定する(逆シリアル化)
@@ -24,10 +24,8 @@ namespace CarReportSystem {
             try {
                 Settings.Instance.Load();
                 BackColor = Color.FromArgb(Settings.Instance.MainFormBackColor);
-                listCarReports.Clear();
-                foreach(var car in repository.GetAll()) {
-                    listCarReports.Add(car);
-                }
+
+                ReloadcarReports();
             }
             catch (Exception ex) {
                 tsslbMessage.Text = "設定ファイル読み込みエラー";
@@ -75,10 +73,10 @@ namespace CarReportSystem {
                 Report = tbReport.Text,
                 Picture = pbPicture.Image,
             };
-            carReport.Id = repository.Add(carReport
+            carReport.Id = _repository.Add(carReport
                 );
 
-            listCarReports.Add(carReport);
+            _carreports.Add(carReport);
 
             SetCbAuthor(cbAuthor.Text);
             SetCbCarName(cbCarName.Text);
@@ -170,8 +168,8 @@ namespace CarReportSystem {
                 tsslbMessage.Text = "削除するレポートを選択してください";
                 return;
             }
-            repository.Delete(carReport.Id);
-            listCarReports.Remove(carReport);
+            _repository.Delete(carReport.Id);
+            _carreports.Remove(carReport);
 
             ImputItemsUpdate();
         }
@@ -198,7 +196,7 @@ namespace CarReportSystem {
             carReport.Report = tbReport.Text;
             carReport.Picture = pbPicture.Image;
 
-            repository.Update(carReport);
+            _repository.Update(carReport);
 
 
             SetCbAuthor(cbAuthor.Text.Trim());
@@ -224,6 +222,21 @@ namespace CarReportSystem {
             cbCarName.Text = carReport.CarName;
             tbReport.Text = carReport.Report;
             pbPicture.Image = carReport.Picture;
+
+            ImputItemsUpdate();
+        }
+
+        private void ReloadcarReports() {
+            _carreports.Clear();
+
+            cbAuthor.Items.Clear();
+            cbCarName.Items.Clear();
+            foreach (var car in _repository.GetAll()) {
+                _carreports.Add(car);
+                SetCbAuthor(car.Author);
+                SetCbCarName(car.CarName);
+            }
+            dgvRecords.ClearSelection();
         }
 
         private void 終了ToolStripMenuItem_Click(object sender, EventArgs e) {
