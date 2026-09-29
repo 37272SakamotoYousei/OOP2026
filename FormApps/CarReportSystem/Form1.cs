@@ -268,5 +268,14 @@ namespace CarReportSystem {
 
         private void ŠJ‚­ToolStripMenuItem_Click(object sender, EventArgs e) {
         }
+
+        private void a_Click(object sender, EventArgs e) {
+            var fm = new Form();
+            fm.Show();
+        }
+
+        private void ƒwƒ‹ƒvHToolStripMenuItem_Click(object sender, EventArgs e) {
+
+        }
     }
 }

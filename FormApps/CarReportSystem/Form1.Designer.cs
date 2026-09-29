@@ -238,7 +238,7 @@
             dgvRecords.Name = "dgvRecords";
             dgvRecords.ReadOnly = true;
             dgvRecords.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvRecords.Size = new Size(1256, 233);
+            dgvRecords.Size = new Size(623, 233);
             dgvRecords.TabIndex = 11;
             dgvRecords.SelectionChanged += dgvRecords_SelectionChanged;
             // 
@@ -354,7 +354,7 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { ファイルFToolStripMenuItem, ヘルプHToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(1439, 24);
+            menuStrip1.Size = new Size(750, 24);
             menuStrip1.TabIndex = 21;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -368,39 +368,39 @@
             // 開くToolStripMenuItem
             // 
             開くToolStripMenuItem.Name = "開くToolStripMenuItem";
-            開くToolStripMenuItem.Size = new Size(180, 22);
+            開くToolStripMenuItem.Size = new Size(155, 22);
             開くToolStripMenuItem.Text = "開く...";
             開くToolStripMenuItem.Click += 開くToolStripMenuItem_Click;
             // 
             // 保存ToolStripMenuItem
             // 
             保存ToolStripMenuItem.Name = "保存ToolStripMenuItem";
-            保存ToolStripMenuItem.Size = new Size(180, 22);
+            保存ToolStripMenuItem.Size = new Size(155, 22);
             保存ToolStripMenuItem.Text = "保存...";
             保存ToolStripMenuItem.Click += 保存ToolStripMenuItem_Click;
             // 
             // toolStripSeparator2
             // 
             toolStripSeparator2.Name = "toolStripSeparator2";
-            toolStripSeparator2.Size = new Size(177, 6);
+            toolStripSeparator2.Size = new Size(152, 6);
             // 
             // 色設定ToolStripMenuItem
             // 
             色設定ToolStripMenuItem.Name = "色設定ToolStripMenuItem";
-            色設定ToolStripMenuItem.Size = new Size(180, 22);
+            色設定ToolStripMenuItem.Size = new Size(155, 22);
             色設定ToolStripMenuItem.Text = "色設定...";
             色設定ToolStripMenuItem.Click += 色設定ToolStripMenuItem_Click;
             // 
             // toolStripSeparator1
             // 
             toolStripSeparator1.Name = "toolStripSeparator1";
-            toolStripSeparator1.Size = new Size(177, 6);
+            toolStripSeparator1.Size = new Size(152, 6);
             // 
             // 終了ToolStripMenuItem
             // 
             終了ToolStripMenuItem.Name = "終了ToolStripMenuItem";
             終了ToolStripMenuItem.ShortcutKeys = Keys.Alt | Keys.F4;
-            終了ToolStripMenuItem.Size = new Size(180, 22);
+            終了ToolStripMenuItem.Size = new Size(155, 22);
             終了ToolStripMenuItem.Text = "終了(&X)";
             終了ToolStripMenuItem.Click += 終了ToolStripMenuItem_Click;
             // 
@@ -410,12 +410,14 @@
             ヘルプHToolStripMenuItem.Name = "ヘルプHToolStripMenuItem";
             ヘルプHToolStripMenuItem.Size = new Size(65, 20);
             ヘルプHToolStripMenuItem.Text = "ヘルプ(&H)";
+            ヘルプHToolStripMenuItem.Click += ヘルプHToolStripMenuItem_Click;
             // 
             // a
             // 
             a.Name = "a";
-            a.Size = new Size(164, 22);
+            a.Size = new Size(180, 22);
             a.Text = "このアプリについて...";
+            a.Click += a_Click;
             // 
             // cbAuthor
             // 
@@ -440,7 +442,7 @@
             statusStrip1.Items.AddRange(new ToolStripItem[] { tsslbMessage });
             statusStrip1.Location = new Point(0, 582);
             statusStrip1.Name = "statusStrip1";
-            statusStrip1.Size = new Size(1439, 22);
+            statusStrip1.Size = new Size(750, 22);
             statusStrip1.SizingGrip = false;
             statusStrip1.TabIndex = 24;
             statusStrip1.Text = "statusStrip1";
@@ -462,7 +464,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1439, 604);
+            ClientSize = new Size(750, 604);
             Controls.Add(statusStrip1);
             Controls.Add(cbCarName);
             Controls.Add(cbAuthor);
