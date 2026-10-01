@@ -73,7 +73,7 @@ public class CarreportRepository {
 
         command.Parameters.AddWithValue("$date", report.Date.ToString("yyyy-MM-dd",CultureInfo.InvariantCulture));
         command.Parameters.AddWithValue("$author", report.Author);
-        command.Parameters.AddWithValue("$maker", report.Maker);
+        command.Parameters.AddWithValue("$maker", (int)report.Maker);
         command.Parameters.AddWithValue("$carName",report.CarName);
         command.Parameters.AddWithValue("$report", report.Report);
         command.Parameters.AddWithValue("$picture", (object?)ImageToBytes(report.Picture)?? DBNull.Value);
@@ -107,7 +107,7 @@ public class CarreportRepository {
         command.Parameters.AddWithValue("$id", carReport.Id);
         command.Parameters.AddWithValue("$date", carReport.Date);
         command.Parameters.AddWithValue("$author", carReport.Author);
-        command.Parameters.AddWithValue("$maker", carReport.Maker);
+        command.Parameters.AddWithValue("$maker", (int)carReport.Maker);
         command.Parameters.AddWithValue("$carName", carReport.CarName);
         command.Parameters.AddWithValue("$report", carReport.Report);
         //command.Parameters.AddWithValue("$Picture", ImageToBytes(carReport.Picture));
