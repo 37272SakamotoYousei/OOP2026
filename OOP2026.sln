@@ -145,6 +145,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AspNetCoreMVC", "AspNetCore
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcBasicSample", "AspNetCoreMVC\MvcBasicSample\MvcBasicSample.csproj", "{D141932D-2E70-4874-8FCA-800A55A776C2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SelfOrderSystem", "AspNetCoreMVC\SelfOrderSystem\SelfOrderSystem\SelfOrderSystem.csproj", "{4FFACEB6-468D-4F0D-B1A1-56B4C93344DB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -315,6 +317,10 @@ Global
 		{D141932D-2E70-4874-8FCA-800A55A776C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D141932D-2E70-4874-8FCA-800A55A776C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D141932D-2E70-4874-8FCA-800A55A776C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4FFACEB6-468D-4F0D-B1A1-56B4C93344DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4FFACEB6-468D-4F0D-B1A1-56B4C93344DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4FFACEB6-468D-4F0D-B1A1-56B4C93344DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4FFACEB6-468D-4F0D-B1A1-56B4C93344DB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -378,6 +384,7 @@ Global
 		{5E91DA2C-129B-4DDD-B29A-38D6F85E867F} = {1846316C-DDC3-4FFA-8E8C-3BCA58F00DF8}
 		{84B66FDD-5552-D43E-B2CB-9DC2A25E5F4C} = {1846316C-DDC3-4FFA-8E8C-3BCA58F00DF8}
 		{D141932D-2E70-4874-8FCA-800A55A776C2} = {EA36A13C-1A06-4806-9578-C00A37DBE23C}
+		{4FFACEB6-468D-4F0D-B1A1-56B4C93344DB} = {EA36A13C-1A06-4806-9578-C00A37DBE23C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BB8CD95A-4447-4F33-B4CD-C383FEE58EA1}
