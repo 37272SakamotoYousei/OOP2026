@@ -1,7 +1,7 @@
 ﻿List<IGreetingBase> list = [
-    new GreetingMorning(),
-    new GreetingAfternoon(),
-    new GreetingEvening(),
+        new GreetingMorning(),
+        new GreetingAfternoon(),
+        new GreetingEvening(),
     ];
 
 foreach (var obj in list) {
@@ -9,9 +9,9 @@ foreach (var obj in list) {
     Console.WriteLine(msg);
 }
 
-//基本クラス
+//インターフェイス
 interface IGreetingBase {
-    public virtual string GetMessage() => "";
+    string GetMessage() => "";
 }
 
 //IGreetingBaseを実装したクラス群
