@@ -235,7 +235,9 @@ body {
 
 /* 全画面：パチンコ筐体の闇＋爆光 */
 body {
-    background: radial-gradient(circle at 50% 20%, #200010 0%, transparent 45%), radial-gradient(circle at 80% 80%, #100040 0%, transparent 45%), linear-gradient(135deg, #030006, #0a0010, #030006);
+    background: radial-gradient(circle at 50% 20%, #200010 0%, transparent 45%),
+                radial-gradient(circle at 80% 80%, #100040 0%, transparent 45%),
+                linear-gradient(135deg, #030006, #0a0010, #030006);
     background-attachment: fixed;
     color: white;
     font-family: "Arial Black", Impact, sans-serif;
@@ -243,17 +245,9 @@ body {
 }
 
 @keyframes bodyPulse {
-    0% {
-        filter: brightness(1);
-    }
-
-    50% {
-        filter: brightness(1.4);
-    }
-
-    100% {
-        filter: brightness(1);
-    }
+    0% { filter: brightness(1); }
+    50% { filter: brightness(1.4); }
+    100% { filter: brightness(1); }
 }
 
 /* 画面ノイズ（エヴァの警報風） */
@@ -262,24 +256,30 @@ body::before {
     position: fixed;
     inset: 0;
     pointer-events: none;
-    background: repeating-linear-gradient( 0deg, transparent 0px, transparent 3px, rgba(255,0,0,.15) 4px );
+    background: repeating-linear-gradient(
+        0deg,
+        transparent 0px,
+        transparent 3px,
+        rgba(255,0,0,.15) 4px
+    );
     opacity: .25;
     animation: scanlines 3s linear infinite;
 }
 
 @keyframes scanlines {
-    from {
-        background-position: 0 0;
-    }
-
-    to {
-        background-position: 0 120px;
-    }
+    from { background-position: 0 0; }
+    to { background-position: 0 120px; }
 }
 
 /* ヘッダー：牙狼の金色役物 */
 header, .navbar {
-    background: linear-gradient(90deg, var(--abyss-black), var(--blood-red), var(--oni-gold), var(--neon-blue), var(--neon-purple) );
+    background: linear-gradient(90deg,
+        var(--abyss-black),
+        var(--blood-red),
+        var(--oni-gold),
+        var(--neon-blue),
+        var(--neon-purple)
+    );
     background-size: 400% 400%;
     animation: headerFlash 2s linear infinite;
     border-bottom: 5px solid var(--oni-gold);
@@ -287,13 +287,8 @@ header, .navbar {
 }
 
 @keyframes headerFlash {
-    0% {
-        background-position: 0% 50%;
-    }
-
-    100% {
-        background-position: 400% 50%;
-    }
+    0% { background-position: 0% 50%; }
+    100% { background-position: 400% 50%; }
 }
 
 .navbar-brand {
@@ -304,7 +299,13 @@ header, .navbar {
 
 /* 見出し：激熱ロゴ演出 */
 h1, h2, h3 {
-    background: linear-gradient( 90deg, var(--blood-red), var(--neon-blue), var(--neon-green), var(--oni-gold) );
+    background: linear-gradient(
+        90deg,
+        var(--blood-red),
+        var(--neon-blue),
+        var(--neon-green),
+        var(--oni-gold)
+    );
     background-size: 300% auto;
     color: transparent;
     background-clip: text;
@@ -313,17 +314,9 @@ h1, h2, h3 {
 }
 
 @keyframes titleGlow {
-    0% {
-        filter: drop-shadow(0 0 10px var(--blood-red));
-    }
-
-    50% {
-        filter: drop-shadow(0 0 25px var(--neon-blue));
-    }
-
-    100% {
-        filter: drop-shadow(0 0 10px var(--oni-gold));
-    }
+    0% { filter: drop-shadow(0 0 10px var(--blood-red)); }
+    50% { filter: drop-shadow(0 0 25px var(--neon-blue)); }
+    100% { filter: drop-shadow(0 0 10px var(--oni-gold)); }
 }
 
 /* カード：役物の光り方 */
@@ -337,24 +330,24 @@ h1, h2, h3 {
     overflow: hidden;
 }
 
-    .card:hover {
-        transform: scale(1.05);
-        box-shadow: 0 0 40px var(--neon-blue), 0 0 80px var(--blood-red);
-    }
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 40px var(--neon-blue), 0 0 80px var(--blood-red);
+}
 
-    /* カード内の爆光 */
-    .card::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: radial-gradient(circle, rgba(255,255,255,.25), transparent 70%);
-        opacity: 0;
-        transition: .3s;
-    }
+/* カード内の爆光 */
+.card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle, rgba(255,255,255,.25), transparent 70%);
+    opacity: 0;
+    transition: .3s;
+}
 
-    .card:hover::before {
-        opacity: 1;
-    }
+.card:hover::before {
+    opacity: 1;
+}
 
 /* ボタン：確変突入レベルの爆光 */
 .btn {
@@ -379,18 +372,9 @@ h1, h2, h3 {
 }
 
 @keyframes btnFlash {
-    0% {
-        filter: brightness(1);
-    }
-
-    50% {
-        filter: brightness(2);
-        transform: scale(1.08);
-    }
-
-    100% {
-        filter: brightness(1);
-    }
+    0% { filter: brightness(1); }
+    50% { filter: brightness(2); transform: scale(1.08); }
+    100% { filter: brightness(1); }
 }
 
 /* フォーム：エヴァの警告画面風 */
@@ -400,10 +384,10 @@ h1, h2, h3 {
     border: 2px solid var(--neon-purple);
 }
 
-    .form-control:focus {
-        border-color: var(--blood-red);
-        box-shadow: 0 0 20px var(--blood-red);
-    }
+.form-control:focus {
+    border-color: var(--blood-red);
+    box-shadow: 0 0 20px var(--blood-red);
+}
 
 /* スクロールバー：役物の光 */
 ::-webkit-scrollbar-thumb {
