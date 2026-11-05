@@ -1,22 +1,416 @@
-html {
-  font-size: 14px;
+/*html {
+    font-size: 14px;
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-size: 16px;
+    }
 }
 
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+:root {
+    --brand-color: #ff00ff;
+    --page-bg: #090014;
+    --gold: #ffff00;
+    --red: #ff0000;
+    --green: #39ff14;
+    --purple: #9400ff;
 }
 
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+    background: radial-gradient(circle at 20% 20%, #ff00ff55, transparent 35%), radial-gradient(circle at 80% 80%, #00ffff44, transparent 35%), linear-gradient(135deg, #090014, #24002e, #090014);
+    color: #ffffff;
+}*/
+
+/* 脳汁全開タイトル */
+/*h1, h2 {
+    color: #ffff00;
+    font-weight: 1000;
+    text-shadow: 0 0 5px #ff0000, 0 0 15px #ff00ff, 0 0 30px #ffff00;
+}*/
+
+/* 激アツボタン */
+/*.btn-success {
+    background: linear-gradient( 90deg, #ff0000, #ff00ff, #ffff00, #00ff00, #00ffff, #9400ff );
+    background-size: 300% 300%;
+    animation: jackpot 2s linear infinite;
+    border: 3px solid #ffff00;
+    color: #000000;
+    font-weight: 1000;
+    text-shadow: 0 0 5px #ffffff;
+    box-shadow: 0 0 10px #ff00ff, 0 0 25px #ffff00, 0 0 40px #00ffff;
 }
+
+    .btn-success:hover {
+        transform: scale(1.1);
+        filter: brightness(1.8);
+        box-shadow: 0 0 35px #ff00ff;
+    }*/
+
+/* 虹色フラッシュ */
+/*@keyframes jackpot {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}*/
+
+/* カードも狂わせる */
+/*.card {
+    background: linear-gradient(135deg, #19002b, #35002b);
+    border: 2px solid #ff00ff;
+    color: #ffffff;
+    box-shadow: 0 0 10px #ff00ff, 0 0 20px #9400ff;
+}*/
+
+/* 入力欄 */
+/*.form-control {
+    background-color: #150020;
+    color: #39ff14;
+    border: 2px solid #00ffff;
+}
+
+    .form-control:focus {
+        background-color: #29003d;
+        color: #ffff00;
+        border-color: #ff00ff;
+        box-shadow: 0 0 20px #ff00ff;
+    }*/
+
+/* 選択文字 */
+/*::selection {
+    background: #ff0000;
+    color: #ffff00;
+}*/
+
+/* スクロールバー */
+/*::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #090014;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(#ff0000, #ff00ff, #ffff00);
+    border-radius: 10px;
+}*/
+
+
+/*html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+:root {
+    --brand-color: #ff00ff;
+    --page-bg: #090014;
+    --gold: #ffff00;
+    --red: #ff0000;
+    --green: #39ff14;
+    --purple: #9400ff;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+    background: radial-gradient(circle at 20% 20%, #ff00ff55, transparent 35%), radial-gradient(circle at 80% 80%, #00ffff44, transparent 35%), linear-gradient(135deg, #090014, #24002e, #090014);
+    color: #ffffff;
+}*/
+
+/* 脳汁全開タイトル */
+/*h1, h2 {
+    color: #ffff00;
+    font-weight: 1000;
+    text-shadow: 0 0 5px #ff0000, 0 0 15px #ff00ff, 0 0 30px #ffff00;
+}*/
+
+/* 激アツボタン */
+/*.btn-success {
+    background: linear-gradient( 90deg, #ff0000, #ff00ff, #ffff00, #00ff00, #00ffff, #9400ff );
+    background-size: 300% 300%;
+    animation: jackpot 2s linear infinite;
+    border: 3px solid #ffff00;
+    color: #000000;
+    font-weight: 1000;
+    text-shadow: 0 0 5px #ffffff;
+    box-shadow: 0 0 10px #ff00ff, 0 0 25px #ffff00, 0 0 40px #00ffff;
+}
+
+    .btn-success:hover {
+        transform: scale(1.1);
+        filter: brightness(1.8);
+        box-shadow: 0 0 35px #ff00ff;
+    }*/
+
+/* 虹色フラッシュ */
+/*@keyframes jackpot {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}*/
+
+/* カードも狂わせる */
+/*.card {
+    background: linear-gradient(135deg, #19002b, #35002b);
+    border: 2px solid #ff00ff;
+    color: #ffffff;
+    box-shadow: 0 0 10px #ff00ff, 0 0 20px #9400ff;
+}*/
+
+/* 入力欄 */
+/*.form-control {
+    background-color: #150020;
+    color: #39ff14;
+    border: 2px solid #00ffff;
+}
+
+    .form-control:focus {
+        background-color: #29003d;
+        color: #ffff00;
+        border-color: #ff00ff;
+        box-shadow: 0 0 20px #ff00ff;
+    }*/
+
+/* 選択文字 */
+/*::selection {
+    background: #ff0000;
+    color: #ffff00;
+}*/
+
+/* スクロールバー */
+/*::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #090014;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(#ff0000, #ff00ff, #ffff00);
+    border-radius: 10px;
+}*/
+
+
+:root {
+    --oni-gold: #ffd700;
+    --blood-red: #ff0022;
+    --neon-blue: #00c8ff;
+    --neon-green: #00ff6a;
+    --neon-purple: #b300ff;
+    --abyss-black: #030006;
+}
+
+/* 全画面：パチンコ筐体の闇＋爆光 */
+body {
+    background: radial-gradient(circle at 50% 20%, #200010 0%, transparent 45%), radial-gradient(circle at 80% 80%, #100040 0%, transparent 45%), linear-gradient(135deg, #030006, #0a0010, #030006);
+    background-attachment: fixed;
+    color: white;
+    font-family: "Arial Black", Impact, sans-serif;
+    animation: bodyPulse 4s ease-in-out infinite;
+}
+
+@keyframes bodyPulse {
+    0% {
+        filter: brightness(1);
+    }
+
+    50% {
+        filter: brightness(1.4);
+    }
+
+    100% {
+        filter: brightness(1);
+    }
+}
+
+/* 画面ノイズ（エヴァの警報風） */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background: repeating-linear-gradient( 0deg, transparent 0px, transparent 3px, rgba(255,0,0,.15) 4px );
+    opacity: .25;
+    animation: scanlines 3s linear infinite;
+}
+
+@keyframes scanlines {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 0 120px;
+    }
+}
+
+/* ヘッダー：牙狼の金色役物 */
+header, .navbar {
+    background: linear-gradient(90deg, var(--abyss-black), var(--blood-red), var(--oni-gold), var(--neon-blue), var(--neon-purple) );
+    background-size: 400% 400%;
+    animation: headerFlash 2s linear infinite;
+    border-bottom: 5px solid var(--oni-gold);
+    box-shadow: 0 0 25px var(--oni-gold), 0 0 50px var(--blood-red);
+}
+
+@keyframes headerFlash {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 400% 50%;
+    }
+}
+
+.navbar-brand {
+    color: var(--oni-gold);
+    font-weight: 1000;
+    text-shadow: 0 0 10px var(--oni-gold), 0 0 25px var(--blood-red);
+}
+
+/* 見出し：激熱ロゴ演出 */
+h1, h2, h3 {
+    background: linear-gradient( 90deg, var(--blood-red), var(--neon-blue), var(--neon-green), var(--oni-gold) );
+    background-size: 300% auto;
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    animation: titleGlow 1.5s linear infinite;
+}
+
+@keyframes titleGlow {
+    0% {
+        filter: drop-shadow(0 0 10px var(--blood-red));
+    }
+
+    50% {
+        filter: drop-shadow(0 0 25px var(--neon-blue));
+    }
+
+    100% {
+        filter: drop-shadow(0 0 10px var(--oni-gold));
+    }
+}
+
+/* カード：役物の光り方 */
+.card {
+    background: linear-gradient(145deg, #0a0008, #1a0012);
+    border: 3px solid var(--blood-red);
+    border-radius: 20px;
+    box-shadow: 0 0 20px var(--blood-red), 0 0 40px var(--neon-purple);
+    transition: .25s;
+    position: relative;
+    overflow: hidden;
+}
+
+    .card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 40px var(--neon-blue), 0 0 80px var(--blood-red);
+    }
+
+    /* カード内の爆光 */
+    .card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(circle, rgba(255,255,255,.25), transparent 70%);
+        opacity: 0;
+        transition: .3s;
+    }
+
+    .card:hover::before {
+        opacity: 1;
+    }
+
+/* ボタン：確変突入レベルの爆光 */
+.btn {
+    border-radius: 15px;
+    font-weight: 1000;
+    border: 3px solid var(--oni-gold);
+    text-shadow: 0 0 5px black;
+    box-shadow: 0 0 20px var(--oni-gold), inset 0 0 10px rgba(255,255,255,.3);
+    transition: .2s;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--neon-blue), var(--neon-purple));
+    color: white;
+    animation: btnFlash 1.2s infinite;
+}
+
+.btn-success {
+    background: linear-gradient(135deg, var(--oni-gold), var(--blood-red));
+    color: #200000;
+    animation: btnFlash 0.8s infinite;
+}
+
+@keyframes btnFlash {
+    0% {
+        filter: brightness(1);
+    }
+
+    50% {
+        filter: brightness(2);
+        transform: scale(1.08);
+    }
+
+    100% {
+        filter: brightness(1);
+    }
+}
+
+/* フォーム：エヴァの警告画面風 */
+.form-control {
+    background: #0a0008;
+    color: var(--neon-green);
+    border: 2px solid var(--neon-purple);
+}
+
+    .form-control:focus {
+        border-color: var(--blood-red);
+        box-shadow: 0 0 20px var(--blood-red);
+    }
+
+/* スクロールバー：役物の光 */
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(var(--blood-red), var(--neon-blue), var(--oni-gold));
+    border-radius: 20px;
+    box-shadow: 0 0 20px var(--neon-blue);
+}
+
+
+
