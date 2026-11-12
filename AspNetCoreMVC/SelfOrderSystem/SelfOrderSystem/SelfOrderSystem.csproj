@@ -18,4 +18,14 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="SelfOrderSystem\obj\Debug\net8.0\staticwebassets\" />
+    <Folder Include="wwwroot\images\products\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="SelfOrderSystem\SelfOrderSystem.csproj" />
+    <None Include="SelfOrderSystem\SelfOrderSystem.csproj.user" />
+  </ItemGroup>
+
 </Project>
