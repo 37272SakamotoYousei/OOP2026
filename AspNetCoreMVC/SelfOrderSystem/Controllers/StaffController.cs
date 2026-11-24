@@ -7,9 +7,12 @@ using SelfOrderSystem.Hubs;
 using SelfOrderSystem.Models;
 using SelfOrderSystem.Services;
 
-namespace SelfOrderSystem.Controllers;
+using Microsoft.AspNetCore.Authorization;
 
-public class StaffController : Controller {
+namespace SelfOrderSystem.Controllers;
+ 
+[Authorize(Roles = "Staff")] //Staff権限の人のみアクセス可
+public class StaffController : Controller { 
 
     private readonly AppDbContext _db; // DB への接続を担当
     private readonly IHubContext<StaffOrdersHub> _hubContext;
