@@ -181,6 +181,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SelfOrderSystem", "AspNetCo
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "VibeCoding", "VibeCoding", "{1134D9CF-F333-4ED4-B7CA-0B90E53E7485}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherApp", "VibeCoding\WeatherApp\WeatherApp.csproj", "{51A013BF-F925-42BA-8E5D-D7C384991ECB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -399,6 +401,10 @@ Global
 		{21FAEC98-C28A-091F-FE98-54197D2ADBB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{21FAEC98-C28A-091F-FE98-54197D2ADBB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{21FAEC98-C28A-091F-FE98-54197D2ADBB2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51A013BF-F925-42BA-8E5D-D7C384991ECB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51A013BF-F925-42BA-8E5D-D7C384991ECB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51A013BF-F925-42BA-8E5D-D7C384991ECB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51A013BF-F925-42BA-8E5D-D7C384991ECB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -477,6 +483,7 @@ Global
 		{C354C12D-D1B6-4099-BC25-E33F7180EC78} = {875C31BE-3CDB-40E7-83E9-870797965628}
 		{C4D6B09C-493B-CAFA-B4BD-7E0339752F1E} = {E05C83FA-9005-4521-BA5C-2760B3F3B99D}
 		{21FAEC98-C28A-091F-FE98-54197D2ADBB2} = {EA36A13C-1A06-4806-9578-C00A37DBE23C}
+		{51A013BF-F925-42BA-8E5D-D7C384991ECB} = {1134D9CF-F333-4ED4-B7CA-0B90E53E7485}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BB8CD95A-4447-4F33-B4CD-C383FEE58EA1}
